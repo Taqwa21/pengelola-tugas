@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Tugas</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #5a8dee, #7a5af8);
+        min-height: 100vh;
+        padding: 25px;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 820px;
+        margin: auto;
+      }
+
+      .card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        color: #333;
+      }
+
+      header {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        background: #5a8dee;
+        color: #fff;
+        transition: 0.2s;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+      }
+
+      .btn:hover {
+        background: #4a7ad1;
+      }
+
+      .detail-item {
+        margin-bottom: 14px;
+      }
+
+      .detail-label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #444;
+      }
+
+      .detail-value {
+        font-size: 15px;
+        margin-top: 4px;
+        color: #333;
+      }
+
+      .status-box {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-top: 5px;
+        background: #5a8dee;
+        color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .status-done {
+        background: #3db061;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Detail Tugas</header>
+
+      <div class="card">
+        <a href="index.html" class="btn">Kembali</a>
+
+        <div class="detail-item">
+          <div class="detail-label">Nama Pelajaran</div>
+          <div class="detail-value" id="detailSubject"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Nama Dosen</div>
+          <div class="detail-value" id="detailLecturer"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Judul / Nama Tugas</div>
+          <div class="detail-value" id="detailTitle"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Tanggal Diberikan</div>
+          <div class="detail-value" id="detailGiven"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Deadline</div>
+          <div class="detail-value" id="detailDeadline"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Prioritas</div>
+          <div class="detail-value" id="detailPriority"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Estimasi Waktu</div>
+          <div class="detail-value" id="detailEstimate"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Link Referensi</div>
+          <div class="detail-value">
+            <a id="detailReference" href="#" target="_blank"></a>
+          </div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Status</div>
+          <div id="detailStatus" class="status-box"></div>
+        </div>
+
+        <div class="detail-item">
+          <div class="detail-label">Catatan Tambahan</div>
+          <div class="detail-value" id="detailNotes"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

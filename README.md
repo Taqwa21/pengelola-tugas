@@ -1,52 +1,49 @@
-# 📝 Aplikasi Daftar Tugas
+# Aplikasi Daftar Tugas
 
-## 📖 Deskripsi
+## Status Proyek
 
-Aplikasi Daftar Tugas adalah aplikasi sederhana berbasis **HTML**, **CSS**, dan **JavaScript** yang digunakan untuk mencatat, mengelola, dan meninjau tugas-tugas harian. Semua data tersimpan secara lokal menggunakan **localStorage**, sehingga tetap aman meskipun browser ditutup.
+Saat ini masih belum final dan masih dalam tahap pengembangan.
 
-## 🚀 Fitur Utama
+## Deskripsi
 
-- Menu awal dengan dua pilihan:
-  - Tambah Tugas
-  - Daftar Tugas
-- Form tambah tugas dengan kolom lengkap:
-  - Nama Pelajaran
+Aplikasi Daftar Tugas adalah aplikasi pencatat dan pengelola tugas berbasis HTML, CSS, dan JavaScript. Data tersimpan menggunakan localStorage sehingga tetap aman meskipun browser ditutup. Tampilan menggunakan desain modern dengan latar animasi bertema ruang angkasa.
+
+## Fitur Utama
+
+- Halaman utama langsung menampilkan daftar tugas
+- Tambah, Selesai, Hapus, dan lihat detail tugas
+- Form tugas berisi:
+  - Nama pelajaran
   - Dosen (opsional)
-  - Deskripsi Tugas
-  - Tanggal Diberikan
-  - Tanggal Dikumpulkan
-  - Catatan Tambahan
+  - Deskripsi tugas
+  - Tanggal diberikan
+  - Tanggal dikumpulkan (format Indonesia lengkap, contoh Kamis 27 Oktober 2025)
+  - Catatan tambahan
   - Status tugas
   - Prioritas tugas
-- Halaman daftar tugas yang menampilkan seluruh data
-- Data tersimpan otomatis di localStorage
-- Tampilan responsif dan mudah digunakan
+- Tampilan kartu tugas dengan warna prioritas
+- Animasi kartu saat tampil
+- Background animasi ruang angkasa
+- Penyimpanan data menggunakan localStorage
 
-## 🗂️ Struktur Folder
-
-project/
-│── index.html
-│── tambah.html
-│── daftar.html
-│── README.md
-└── assets/
-│── style.css
-└── script.js
-
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - HTML
 - CSS
 - JavaScript
 - localStorage
 
-## 📌 Cara Menggunakan
+## Cara Menggunakan
 
-1. Buka file **index.html** lewat browser.
-2. Pilih menu **Tambah Tugas** untuk membuat tugas baru.
-3. Pilih **Daftar Tugas** untuk melihat semua tugas yang sudah disimpan.
-4. Semua data akan otomatis tersimpan ke localStorage.
+1. Buka file `index.html` di browser.
+2. Klik tombol Tambah Tugas untuk membuat tugas baru.
+3. Isi seluruh form sesuai kebutuhan.
+4. Tugas akan muncul di daftar dengan opsi detail, hapus, dan selesai.
+5. Semua data tersimpan otomatis ke localStorage.
 
-## 📄 Catatan
+## Struktur File
 
-Anda bebas memodifikasi tampilan, menambah fitur seperti pencarian, filter prioritas, atau export ke file. Jika ingin dibuatkan versi modern menggunakan Tailwind atau versi single-page, silakan beri tahu.
+- index.html (daftar tugas)
+- tambah.html (tambah tugas)
+- detail.html (detail tugas)
+- assets/js/script.js (logika aplikasi)

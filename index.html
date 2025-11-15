@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Tugas</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        padding: 25px;
+        color: #fff;
+
+        background: radial-gradient(circle at 20% 20%, #1a1a2e, #0a0a1a);
+        background-size: 300% 300%;
+        animation: bgMove 20s ease infinite;
+
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      @keyframes bgMove {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: transparent url("https://i.ibb.co/4f1L1yP/stars2.png")
+          repeat;
+        opacity: 0.25;
+        animation: starsMove 60s linear infinite;
+        pointer-events: none;
+      }
+
+      body::after {
+        opacity: 0.15;
+        animation-duration: 120s;
+      }
+
+      @keyframes starsMove {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-300px, -600px);
+        }
+      }
+
+      .container {
+        max-width: 850px;
+        margin: auto;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(18px);
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      header {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .top-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 22px;
+      }
+
+      .btn-add {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #6e74ff;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.25s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      .btn-add:hover {
+        background: #5a60e8;
+        transform: translateY(-2px);
+      }
+
+      .task-card {
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 17px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        opacity: 0;
+        animation: fadeIn 0.4s forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .task-card:hover {
+        transform: translateY(-4px);
+        transition: 0.25s;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+      }
+
+      .prio-rendah {
+        border-left: 6px solid #7bd97b;
+      }
+
+      .prio-sedang {
+        border-left: 6px solid #ffda68;
+      }
+
+      .prio-tinggi {
+        border-left: 6px solid #ff6b6b;
+      }
+
+      .task-info {
+        flex: 1;
+        color: #222;
+      }
+
+      .task-title {
+        font-size: 17px;
+        margin-bottom: 6px;
+        color: #111;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .task-meta {
+        font-size: 13px;
+        color: #444;
+        margin-top: 3px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 6px;
+      }
+
+      .icon-btn {
+        padding: 8px 10px;
+        font-size: 13px;
+        border-radius: 7px;
+        cursor: pointer;
+        border: none;
+        background: #5a8dee;
+        color: #fff;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .icon-btn:hover {
+        background: #4a7ad1;
+      }
+
+      .icon-btn.red {
+        background: #e04a4a;
+      }
+
+      .icon-btn.red:hover {
+        background: #c63c3c;
+      }
+
+      .icon-btn.green {
+        background: #3ebd3e;
+      }
+
+      .icon-btn.green:hover {
+        background: #2d9d2d;
+      }
+
+      .no-task {
+        text-align: center;
+        color: #eee;
+        font-size: 15px;
+        margin-top: 30px;
+      }
+
+      .add-icon {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>Daftar Tugas</header>
+
+      <div class="card">
+        <div class="top-actions">
+          <a href="tambah.html" class="btn-add">
+            <span class="add-icon">➕</span>
+            Tambah Tugas
+          </a>
+        </div>
+
+        <div id="taskList"></div>
+
+        <div id="noTaskMessage" class="no-task" style="display: none">
+          Belum ada tugas yang ditambahkan.
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

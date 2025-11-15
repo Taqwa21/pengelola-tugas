@@ -8,6 +8,10 @@ Saat ini masih belum final dan masih dalam tahap pengembangan.
 
 Aplikasi Daftar Tugas adalah aplikasi pencatat dan pengelola tugas berbasis HTML, CSS, dan JavaScript. Data tersimpan menggunakan localStorage sehingga tetap aman meskipun browser ditutup. Tampilan menggunakan desain modern dengan latar animasi bertema ruang angkasa.
 
+## Preview
+
+🔗 https://pengelola-tugascom.vercel.app/
+
 ## Fitur Utama
 
 - Halaman utama langsung menampilkan daftar tugas
